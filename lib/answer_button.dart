@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AnswerButton extends StatelessWidget {
 
-  const AnswerButton(this.answerText, this.onPressed, {super.key});
+  const AnswerButton( {super.key, required this.answerText, required this.onPressed,});
 
   final String answerText;
   final void Function() onPressed;
