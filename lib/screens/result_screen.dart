@@ -3,7 +3,10 @@ import 'package:adv_basics/widgets/summary/question_summary.dart';
 import 'package:flutter/material.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({super.key, required this.choosenAnswers, required this.onPressedRestart });
+  const ResultScreen(
+      {super.key,
+      required this.choosenAnswers,
+      required this.onPressedRestart});
 
   final List<String> choosenAnswers;
   final Function() onPressedRestart;
@@ -25,9 +28,9 @@ class ResultScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final numberOfTotalQuestions = questions.length;
-    final numberOfCorrectQuestions = summeryData.where((data) {
-      return data['correct_answer'] == data['user_answer'];
-    }).length;
+    final numberOfCorrectQuestions = summeryData
+        .where((data) => data['correct_answer'] == data['user_answer'])
+        .length;
 
     return SizedBox(
       width: double.infinity,
