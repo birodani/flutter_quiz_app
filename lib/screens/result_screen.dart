@@ -8,7 +8,7 @@ class ResultScreen extends StatelessWidget {
   final List<String> choosenAnswers;
   final Function() onPressedRestart;
 
-  List<Map<String, Object>> getSummeryMap() {
+  List<Map<String, Object>> get summeryData {
     final List<Map<String, Object>> summary = [];
 
     for (var i = 0; i < choosenAnswers.length; i++) {
@@ -24,7 +24,6 @@ class ResultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final summeryData = getSummeryMap();
     final numberOfTotalQuestions = questions.length;
     final numberOfCorrectQuestions = summeryData.where((data) {
       return data['correct_answer'] == data['user_answer'];
