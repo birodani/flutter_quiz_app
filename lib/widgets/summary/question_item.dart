@@ -16,9 +16,6 @@ class QuestionItem extends StatelessWidget {
             style: const TextStyle(
                 fontSize: 14, color: Colors.white, fontWeight: FontWeight.w700),
           ),
-          const SizedBox(
-            height: 5,
-          ),
           Text(
             data['user_answer'] as String,
             style: const TextStyle(

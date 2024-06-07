@@ -16,17 +16,20 @@ class QuestionSummary extends StatelessWidget {
           children: summaryData.map((data) {
             final isCorrectAnswer =
                 data['correct_answer'] == data['user_answer'];
-            return Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                QuestionIdentifier(
-                    questionIndex:
-                        ((data['question_index'] as int) + 1).toString(),
-                    isCorrectAnswer: isCorrectAnswer
-                ),
-                const SizedBox(width: 20),
-                QuestionItem(data: data),
-              ],
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  QuestionIdentifier(
+                      questionIndex:
+                          ((data['question_index'] as int) + 1).toString(),
+                      isCorrectAnswer: isCorrectAnswer
+                  ),
+                  const SizedBox(width: 20),
+                  QuestionItem(data: data),
+                ],
+              ),
             );
           }).toList(),
         ),
